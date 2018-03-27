@@ -2,7 +2,7 @@ class HomeController < ApplicationController
 
   def index
     notis = Noti.all
-    # Preloader.noti_preload(notis)
+    Preloader.noti_preload(notis)
     notis.each do |noti|
       puts case noti.resource
       when Product
